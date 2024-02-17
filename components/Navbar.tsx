@@ -6,7 +6,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <nav className=" border-2  flexBetween  padding-container  relative z-30 py-5">
+    <nav className="   flexBetween  padding-container  relative z-30 py-5">
       <Link href="/" className="flex items-center justify-center">
         <Image src="/logo.jpeg" alt="logo" width={60} height={20} />
         <p className=" font-bold text-3xl p-2 ">
