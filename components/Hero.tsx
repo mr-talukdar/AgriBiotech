@@ -12,7 +12,7 @@ const Hero = () => {
           Agri
           <span className=" text-gray-50 md:text-white">Biotech</span>
         </h1>
-        <p className="text-[20px] font-[500] mt-6 text-black md:text-gray-50 xl:max-w-[520px]">
+        <p className="text-[20px] font-[500] mt-6 text-black xl:max-w-[520px]">
           Tempor occaecat elit excepteur irure do ex occaecat consectetur quis
           veniam ex ipsum commodo aliquip. Sit minim quis aute culpa enim in
           laborum pariatur eu aliquip esse commodo deserunt mollit. Do sint amet
@@ -37,7 +37,7 @@ const Hero = () => {
 
           <p className="bold-16 lg:bold-20 text-blue-70">
             198k
-            <span className="regular-16 lg:regular-20 ml-1">
+            <span className="regular-16 lg:regular-20 ml-1 text-white">
               Excellent Reviews
             </span>
           </p>
