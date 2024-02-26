@@ -3,14 +3,14 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="max-container padding-container flex flex-col gap-20 py-10 pb-32 md:gap-28 lg:py-20 xl:flex-row">
+    <section className="max-container padding-container flex flex-col gap-20 py-10 pb-96  md:gap-28 lg:py-20 xl:flex-row">
       <div className="hero-map" />
 
       <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
         <h1 className="bold-52 lg:bold-88">
           Welcome to <br />
           Agri
-          <span className=" text-gray-50 md:text-white">Biotech</span>
+          <span className=" text-green-50">Biotech</span>
         </h1>
         <p className="text-[20px] font-[500] mt-6 text-black xl:max-w-[520px]">
           Tempor occaecat elit excepteur irure do ex occaecat consectetur quis
