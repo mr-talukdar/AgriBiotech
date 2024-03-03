@@ -4,11 +4,19 @@ import React, { useEffect, useState } from "react";
 import AboutPG from "./AboutPG";
 
 const AboutUs = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth < 768);
+    }
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      if (typeof window !== "undefined") {
+        setIsMobile(window.innerWidth < 768);
+      }
     };
 
     // Add event listener for window resize

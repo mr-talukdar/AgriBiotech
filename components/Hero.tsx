@@ -7,12 +7,12 @@ const Hero = () => {
       <div className="hero-map" />
 
       <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
-        <h1 className="bold-52 lg:bold-88">
+        <h1 className="bold-52 text-white lg:bold-88">
           Welcome to <br />
           Agri
           <span className=" text-green-50">Biotech</span>
         </h1>
-        <p className="text-[20px] font-[500] mt-6 text-black xl:max-w-[520px]">
+        <p className="  text-xl  md:mt-20 mt-8 text-black font-medium xl:max-w-[520px]">
           Tempor occaecat elit excepteur irure do ex occaecat consectetur quis
           veniam ex ipsum commodo aliquip. Sit minim quis aute culpa enim in
           laborum pariatur eu aliquip esse commodo deserunt mollit. Do sint amet

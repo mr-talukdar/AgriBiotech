@@ -1,3 +1,4 @@
+"use client";
 import { PEOPLE_URL } from "@/constants";
 import Image from "next/image";
 
@@ -49,32 +50,35 @@ const CampSite = ({
   );
 };
 
-const Camp = () => {
+const Products = () => {
   return (
     <div className="2xl:w-full relative flex flex-col pt-40">
+      <div className="my-10 px-5 text-4xl font-semibold">
+        Our<span className=" text-green-50"> Products</span>
+      </div>
       <div className="hide-scrollbar flex h-[340px] w-full items-start justify-start gap-8 overflow-x-auto lg:h-[400px] xl:h-[640px]">
         <CampSite
           backgroundImage="bg-bg-img-1"
-          title="Putuk Truno Camp"
-          subtitle="Prigen, Pasuruan"
+          title="Product Name"
+          subtitle="Product Type"
           peopleJoined="50+ Bought"
         />
         <CampSite
           backgroundImage="bg-bg-img-2"
-          title="Mountain View Camp"
-          subtitle="Somewhere in the Wilderness"
+          title="Product Name"
+          subtitle="Product Type"
           peopleJoined="50+ Bought"
         />
         <CampSite
           backgroundImage="bg-bg-img-1"
-          title="Putuk Truno Camp"
-          subtitle="Prigen, Pasuruan"
+          title="Product Name"
+          subtitle="Product Type"
           peopleJoined="50+ Bought"
         />
         <CampSite
           backgroundImage="bg-bg-img-2"
-          title="Mountain View Camp"
-          subtitle="Somewhere in the Wilderness"
+          title="Product Name"
+          subtitle="Product Type"
           peopleJoined="50+ Bought"
         />
       </div>
@@ -82,14 +86,22 @@ const Camp = () => {
       <div className="flexEnd mt-10 px-6 lg:-mt-60 lg:mr-6">
         <div className="bg-green-50 p-8 lg:max-w-[500px] xl:max-w-[734px] xl:rounded-5xl xl:px-16 xl:py-20 relative w-full overflow-hidden rounded-3xl">
           <h2 className="regular-24 md:regular-32 2xl:regular-64 capitalize text-white">
-            <strong>Feeling Lost</strong> And Not Knowing The Way?
+            <strong>Want the Best</strong> And Not Knowing The Way?
           </h2>
           <p className="regular-14 xl:regular-16 mt-5 text-white">
-            Starting from the anxiety of the climbers when visiting a new
-            climbing location, the possibility of getting lost is very large.
-            That's why we are here for those of you who want to start an
-            adventure
+            Explore our diverse range of agricultural products and tools
+            designed to optimize production. Discover innovative solutions that
+            prioritize sustainability and efficiency, ensuring responsible
+            practices for long-term success in farming.
           </p>
+          <div
+            className="text-white text-xl mt-2 hover:font-semibold cursor-pointer"
+            onClick={() => {
+              console.log("see more");
+            }}
+          >
+            Explore More {`>>>`}
+          </div>
           <Image
             src="/quote.svg"
             alt="camp-2"
@@ -103,4 +115,4 @@ const Camp = () => {
   );
 };
 
-export default Camp;
+export default Products;
