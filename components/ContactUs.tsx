@@ -1,6 +1,14 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import { IoIosClock, IoMdClock } from "react-icons/io";
+import {
+  IoBusinessOutline,
+  IoMailOpen,
+  IoPhonePortrait,
+  IoPhonePortraitOutline,
+} from "react-icons/io5";
+import { SocialIcon } from "react-social-icons";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -28,18 +36,38 @@ const ContactForm = () => {
   return (
     <>
       <div className=" mt-5 md:text-4xl text-2xl   w-full h-full  flex md:flex-row flex-col-reverse  justify-end md:gap-96 gap-20 md:p-20 p-10  ">
-        <div id="detailsContact" className="h-full  ">
+        <div id="detailsContact" className="h-full md:p-2  ">
           <div className="bg-green-50 p-12 lg:max-w-[500px] xl:max-w-[734px] xl:rounded-5xl xl:px-16 xl:py-20 relative w-full overflow-hidden rounded-3xl">
             <div className="flex flex-col gap-16 text-white">
-              <div>Info</div>
-              <div>email</div>
-              <div>phone no.</div>
-              <div>address</div>
-              <div>working hours</div>
-              <div className="flex justify-cente gap-2">
-                <div>facebook</div>
-                <div>instagram</div>
-                <div>twitter</div>
+              <div className=" font-extralight">INFO</div>
+              <div className="flex gap-4">
+                <IoMailOpen />
+                <div className="md:text-xl text-sm">
+                  contact@agribiotech.co.in
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <IoPhonePortraitOutline />
+                <div className="md:text-xl text-sm">
+                  +918411028760 +919434401977
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <IoBusinessOutline />
+                <div className="md:text-xl text-sm">
+                  {" "}
+                  Saradapally, Tarakeswar, Hooghly, West Bengal
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <IoMdClock />
+                <div className="md:text-xl text-sm">0900-1800 Hrs</div>
+              </div>
+              <div className="flex justify-cente gap-10">
+                <SocialIcon network="facebook" />
+
+                <SocialIcon network="instagram" />
+                <SocialIcon network="x" />
               </div>
             </div>
             <Image

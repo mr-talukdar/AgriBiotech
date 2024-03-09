@@ -1,5 +1,6 @@
 import AboutUs from "@/components/AboutUs";
 import ContactForm from "@/components/ContactUs";
+import Footer from "@/components/Footer";
 
 import Hero from "@/components/Hero";
 import Products from "@/components/Products";
