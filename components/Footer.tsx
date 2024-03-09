@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 
 const Footer = () => {
@@ -6,7 +5,9 @@ const Footer = () => {
     <div className="flex justify-center text-xs mb-2 gap-1">
       <div>Made with love by, </div>
       <a
+
         className=" cursor-pointer font-semibold hover:underline"
+
         href="https://rahultalukdar.in"
         target="_blank"
       >

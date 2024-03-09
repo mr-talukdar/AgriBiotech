@@ -54,7 +54,9 @@ const CampSite = ({
 
 const Products = () => {
   return (
+
     <div id="product" className="2xl:w-full relative flex flex-col pt-40">
+
       <div className="my-10 px-5 text-4xl font-semibold">
         Our<span className=" text-green-50"> Products</span>
       </div>

@@ -55,13 +55,13 @@ const Navbar = () => {
 
       <ul className="hidden h-full gap-12 lg:flex">
         {NAV_LINKS.map((link) => (
-          <Link
+          <a
             href={link.href}
             key={link.key}
             className="regular-16 text-black flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold hover:underline"
           >
             {link.label}
-          </Link>
+          </a>
         ))}
       </ul>
       <Image
