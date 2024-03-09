@@ -29,7 +29,10 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <div className=" h-screen w-screen relative flex  flex-col md:flex-row md:top-36  justify-center">
+    <div
+      id="about"
+      className=" h-screen w-screen relative flex  flex-col md:flex-row md:top-36  justify-center"
+    >
       <div
         className={
           isMobile ? " text-center md:pt-10  flex flex-col " : "hidden"
