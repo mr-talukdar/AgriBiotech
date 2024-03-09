@@ -35,7 +35,10 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className=" mt-5 md:text-4xl text-2xl   w-full h-full  flex md:flex-row flex-col-reverse  justify-end md:gap-96 gap-20 md:p-20 p-10  ">
+      <div
+        id="contact"
+        className=" mt-5 md:text-4xl text-2xl   w-full h-full  flex md:flex-row flex-col-reverse  justify-end md:gap-96 gap-20 md:p-20 p-10  "
+      >
         <div id="detailsContact" className="h-full md:p-2  ">
           <div className="bg-green-50 p-12 lg:max-w-[500px] xl:max-w-[734px] xl:rounded-5xl xl:px-16 xl:py-20 relative w-full overflow-hidden rounded-3xl">
             <div className="flex flex-col gap-16 text-white">

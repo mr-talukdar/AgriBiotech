@@ -3,10 +3,10 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="max-container padding-container flex flex-col gap-20 py-10 pb-96  md:gap-28 lg:py-20 xl:flex-row">
+    <section className="max-container padding-container flex flex-col gap-20 pt-32  pb-96  md:gap-28 lg:py-20 xl:flex-row">
       <div className="hero-map" />
 
-      <div className="relative z-20 flex flex-1 flex-col xl:w-1/2">
+      <div className="relative md:mt-20 z-20 flex flex-1 flex-col xl:w-1/2">
         <h1 className="bold-52 text-white lg:bold-88">
           Welcome to <br />
           Agri
