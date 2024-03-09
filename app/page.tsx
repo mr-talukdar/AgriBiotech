@@ -12,6 +12,7 @@ export default function Home() {
       <AboutUs />
       <Products />
       <ContactForm />
+      <Footer />
     </>
   );
 }

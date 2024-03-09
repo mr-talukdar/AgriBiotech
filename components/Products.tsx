@@ -1,6 +1,7 @@
 "use client";
 import { PEOPLE_URL } from "@/constants";
 import Image from "next/image";
+import Link from "next/link";
 
 interface CampProps {
   backgroundImage: string;
@@ -17,6 +18,7 @@ const CampSite = ({
 }: CampProps) => {
   return (
     <div
+      id="products"
       className={`h-full w-full min-w-[1100px] ${backgroundImage} bg-cover bg-no-repeat lg:rounded-r-5xl 2xl:rounded-5xl`}
     >
       <div className="flex h-full flex-col items-start justify-between p-6 lg:px-20 lg:py-10">
@@ -52,7 +54,9 @@ const CampSite = ({
 
 const Products = () => {
   return (
-    <div id="products" className="2xl:w-full relative flex flex-col pt-40">
+
+    <div id="product" className="2xl:w-full relative flex flex-col pt-40">
+
       <div className="my-10 px-5 text-4xl font-semibold">
         Our<span className=" text-green-50"> Products</span>
       </div>
@@ -94,14 +98,13 @@ const Products = () => {
             prioritize sustainability and efficiency, ensuring responsible
             practices for long-term success in farming.
           </p>
-          <div
-            className="text-white text-xl mt-2 hover:font-semibold cursor-pointer"
-            onClick={() => {
-              console.log("see more");
-            }}
-          >
-            Explore More {`>>>`}
-          </div>
+          <Link href="/products">
+            {" "}
+            <div className="text-white text-xl mt-2 hover:font-semibold cursor-pointer">
+              Explore More {`>>>`}
+            </div>
+          </Link>
+
           <Image
             src="/quote.svg"
             alt="camp-2"

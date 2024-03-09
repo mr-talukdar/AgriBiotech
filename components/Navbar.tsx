@@ -43,19 +43,22 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="   flexBetween  padding-container  relative z-30 py-5 ">
-      <Link href="/" className="flex items-center justify-center">
-        <Image src="/logo.png" alt="logo" width={60} height={60} />
-        <p className=" font-bold text-white text-3xl p-2 ">
-          Agri<span className=" text-teal-500">Biotech</span>
-        </p>
-      </Link>
+    <nav className=" bg-gray-500/10 w-full fixed   flexBetween  padding-container z-30 py-5 ">
+      <a href="/">
+        <div className="flex items-center justify-center">
+          <Image src="/logo.png" alt="logo" width={60} height={60} />
+          <p className="font-bold text-black text-3xl p-2">
+            Agri<span className="text-green-500">Biotech</span>
+          </p>
+        </div>
+      </a>
+
       <ul className="hidden h-full gap-12 lg:flex">
         {NAV_LINKS.map((link) => (
           <a
             href={link.href}
             key={link.key}
-            className="regular-16 text-white flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold hover:underline"
+            className="regular-16 text-black flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold hover:underline"
           >
             {link.label}
           </a>

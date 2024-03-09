@@ -31,7 +31,11 @@ const AboutUs = () => {
   return (
     <div
       id="about"
-      className=" h-screen w-screen relative flex  flex-col md:flex-row md:top-36  justify-center"
+
+      className=" h-screen relative flex  flex-col md:flex-row md:top-36  justify-center"
+
+    
+
     >
       <div
         className={
