@@ -128,6 +128,9 @@ body {
   .hero-map {
     @apply absolute right-0 top-0 h-screen w-screen bg-pattern-2 bg-cover bg-center;
   }
+  .hero-mapProd {
+    @apply absolute right-0 top-0 h-3/4 w-screen bg-productLanding bg-cover bg-center;
+  }
 
   /* Camp */
   .camp-quote {

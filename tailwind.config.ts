@@ -37,6 +37,7 @@ module.exports = {
         "pattern-2": "url('/farmer-2.jpg')",
         "aboutus-bg": "url('/AboutUS-BG.png')",
         "contact-bg": "url('/ContactBG.png')",
+        productLanding: "url('/farmer-3.jpg')",
       },
       screens: {
         xs: "400px",

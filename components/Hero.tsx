@@ -13,11 +13,10 @@ const Hero = () => {
           <span className=" text-green-50">Biotech</span>
         </h1>
         <p className="  text-xl  md:mt-20 mt-8 text-black font-medium xl:max-w-[520px]">
-          Tempor occaecat elit excepteur irure do ex occaecat consectetur quis
-          veniam ex ipsum commodo aliquip. Sit minim quis aute culpa enim in
-          laborum pariatur eu aliquip esse commodo deserunt mollit. Do sint amet
-          excepteur cupidatat laboris culpa minim est amet adipisicing proident.
-          Quis duis et nisi velit excepteur anim sit fugiat eu tempor nulla.
+          Agri Biotech-India is focusing to promote an ecologically sustainable
+          agriculture with the help of modern biotechnology. Our vision is to
+          provide growth and development of rural economy by using research and
+          technological support.
         </p>
 
         <div className="my-11 flex flex-wrap gap-5">

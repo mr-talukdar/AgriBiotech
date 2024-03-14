@@ -31,7 +31,7 @@ const AboutUs = () => {
   return (
     <div
       id="about"
-      className=" h-screen relative flex  flex-col md:flex-row md:top-36  justify-center"
+      className=" h-screen relative flex  flex-col md:flex-row md:top-48 top-4  justify-center"
     >
       <div
         className={
@@ -57,11 +57,11 @@ const AboutUs = () => {
         <h1 className="text-4xl text-bold">
           About Agri<span className="text-green-50">Biotech</span>
         </h1>
-        <div className=" w-4/5 text-left text-2xl ">
+        <div className=" w-4/5 text-left text-md ">
           <AboutPG />
         </div>
       </div>
-      <div className={isMobile ? "text-center px-12" : "hidden"}>
+      <div className={isMobile ? " text-xs text-center px-12" : "hidden"}>
         <AboutPG />
       </div>
     </div>

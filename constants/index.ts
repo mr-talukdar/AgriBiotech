@@ -46,6 +46,45 @@ export const FEATURES = [
   },
 ];
 
+export const PRODUCTS = [
+  {
+    name: "Example Product",
+    description: "This is an example product description.",
+    price: 19.99,
+    image: "https://m.media-amazon.com/images/I/713+fXLmLpL.jpg",
+  },
+  {
+    name: "Example Product",
+    description: "This is an example product description.",
+    price: 19.99,
+    image: "https://m.media-amazon.com/images/I/713+fXLmLpL.jpg",
+  },
+  {
+    name: "Example Product",
+    description: "This is an example product description.",
+    price: 19.99,
+    image: "https://m.media-amazon.com/images/I/713+fXLmLpL.jpg",
+  },
+  {
+    name: "Example Product",
+    description: "This is an example product description.",
+    price: 19.99,
+    image: "https://m.media-amazon.com/images/I/713+fXLmLpL.jpg",
+  },
+  {
+    name: "Example Product",
+    description: "This is an example product description.",
+    price: 19.99,
+    image: "https://m.media-amazon.com/images/I/713+fXLmLpL.jpg",
+  },
+  {
+    name: "Example Product",
+    description: "This is an example product description.",
+    price: 19.99,
+    image: "https://m.media-amazon.com/images/I/713+fXLmLpL.jpg",
+  },
+];
+
 // FOOTER SECTION
 export const FOOTER_LINKS = [
   {
