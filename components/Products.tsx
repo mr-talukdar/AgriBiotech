@@ -2,6 +2,7 @@
 import { PEOPLE_URL } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { useQuery } from "urql";
 
 interface CampProps {
   backgroundImage: string;
@@ -53,6 +54,24 @@ const CampSite = ({
 };
 
 const Products = () => {
+  const [result] = useQuery({
+    query: `
+      query {
+         products {
+  	id
+    name
+    applications
+    description
+    why
+    image {
+      url
+    }
+  }
+      }
+    `,
+  });
+  const { data, fetching, error } = result;
+  console.log(data);
   return (
     <div id="product" className="2xl:w-full relative flex flex-col pt-40">
       <div className="my-10 px-5 text-4xl font-semibold">
