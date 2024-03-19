@@ -7,6 +7,7 @@ import Hero from "@/components/Hero";
 import Products from "@/components/Products";
 
 import { Client, Provider, cacheExchange, fetchExchange } from "urql";
+import { useQuery } from "urql";
 
 const client = new Client({
   url: "https://ap-south-1.cdn.hygraph.com/content/clty7kh150ci507wdhdyklati/master",

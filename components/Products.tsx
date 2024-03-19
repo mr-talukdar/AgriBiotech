@@ -2,7 +2,10 @@
 import { PEOPLE_URL } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
+import { Key } from "react";
 import { useQuery } from "urql";
+
+import { Client, Provider, cacheExchange, fetchExchange } from "urql";
 
 interface CampProps {
   backgroundImage: string;
@@ -17,19 +20,27 @@ const CampSite = ({
   subtitle,
   peopleJoined,
 }: CampProps) => {
+  console.log(backgroundImage);
   return (
     <div
       id="products"
-      className={`h-full w-full min-w-[1100px] ${backgroundImage} bg-cover bg-no-repeat lg:rounded-r-5xl 2xl:rounded-5xl`}
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+      className={`h-full w-full min-w-[1100px] bg-cover bg-no-repeat lg:rounded-r-5xl 2xl:rounded-5xl`}
     >
       <div className="flex h-full flex-col items-start justify-between p-6 lg:px-20 lg:py-10">
         <div className="flexCenter gap-4">
-          <div className="rounded-full bg-green-50 p-4">
-            <Image src="/folded-map.svg" alt="map" width={28} height={28} />
+          <div className="rounded-full p-4">
+            <Image
+              src="/plant.jpg"
+              alt="plant"
+              width={48}
+              height={48}
+              className="rounded-full"
+            />
           </div>
           <div className="flex flex-col gap-1">
-            <h4 className="bold-18 text-white">{title}</h4>
-            <p className="regular-14 text-white">{subtitle}</p>
+            <h4 className="bold-18 text-black">{title}</h4>
+            <p className="regular-14 text-black">{subtitle}</p>
           </div>
         </div>
 
@@ -46,7 +57,7 @@ const CampSite = ({
               />
             ))}
           </span>
-          <p className="bold-16 md:bold-20 text-white">{peopleJoined}</p>
+          <p className="bold-16 md:bold-20 text-black">{peopleJoined}</p>
         </div>
       </div>
     </div>
@@ -66,42 +77,39 @@ const Products = () => {
     image {
       url
     }
+    featured
   }
       }
     `,
   });
   const { data, fetching, error } = result;
-  console.log(data);
+
   return (
-    <div id="product" className="2xl:w-full relative flex flex-col pt-40">
+    <div className="2xl:w-full relative flex flex-col pt-40">
       <div className="my-10 px-5 text-4xl font-semibold">
         Our<span className=" text-green-50"> Products</span>
       </div>
       <div className="hide-scrollbar flex h-[340px] w-full items-start justify-start gap-8 overflow-x-auto lg:h-[400px] xl:h-[640px]">
-        <CampSite
-          backgroundImage="bg-bg-img-1"
-          title="Product Name"
-          subtitle="Product Type"
-          peopleJoined="50+ Bought"
-        />
-        <CampSite
-          backgroundImage="bg-bg-img-2"
-          title="Product Name"
-          subtitle="Product Type"
-          peopleJoined="50+ Bought"
-        />
-        <CampSite
-          backgroundImage="bg-bg-img-1"
-          title="Product Name"
-          subtitle="Product Type"
-          peopleJoined="50+ Bought"
-        />
-        <CampSite
-          backgroundImage="bg-bg-img-2"
-          title="Product Name"
-          subtitle="Product Type"
-          peopleJoined="50+ Bought"
-        />
+        {data?.products.map(
+          (product: {
+            id: Key | null | undefined;
+            image: { url: string };
+            name: string;
+            featured: boolean;
+          }) => {
+            if (product.featured) {
+              return (
+                <CampSite
+                  key={product.id}
+                  backgroundImage={product.image.url}
+                  title={product.name}
+                  subtitle={product.name}
+                  peopleJoined="50+ Bought"
+                />
+              );
+            }
+          }
+        )}
       </div>
 
       <div className="flexEnd mt-10 px-6 lg:-mt-60 lg:mr-6">

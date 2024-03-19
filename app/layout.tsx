@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Client, Provider, cacheExchange, fetchExchange } from "urql";
 
 export const metadata: Metadata = {
   title: "Agri Biotech",
