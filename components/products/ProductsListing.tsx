@@ -8,7 +8,8 @@ const ProductsListing = () => {
     query: `
       query {
          products {
-  	id
+          id
+  	slug
     name
     applications
     description
@@ -28,7 +29,7 @@ const ProductsListing = () => {
         <ProductCard product={product} />
       ))} */}
       {data?.products.map((product: any) => (
-        <ProductCard product={product} />
+        <ProductCard key={product.id} product={product} />
       ))}
     </div>
   );
