@@ -1,76 +1,91 @@
 "use client";
-import { NAV_LINKS } from "@/constants";
+// Import necessary modules
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { NAV_LINKS } from "@/constants";
 
 const Navbar = () => {
-  const clickHandler = (event: Event) => {
-    event.preventDefault();
-    const targetElementId = (event.target as HTMLAnchorElement).getAttribute(
-      "href"
-    );
-    if (targetElementId) {
-      const targetId = targetElementId.substring(1);
-      handleSmoothScroll(targetId);
-    }
+  // State to manage mobile menu visibility
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Function to toggle mobile menu visibility
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleSmoothScroll = (targetId: string) => {
-    const targetElement = document.getElementById(targetId);
-
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
+  const handleButtonClick = () => {
+    console.log(isMobileMenuOpen);
+    toggleMobileMenu();
+    console.log(isMobileMenuOpen);
   };
-
-  useEffect(() => {
-    // Attach click event listener to all navigation links
-    const links = document.querySelectorAll("nav a");
-    links.forEach((link) => {
-      link.addEventListener("click", clickHandler as EventListener);
-    });
-
-    // Clean up event listeners on component unmount
-    return () => {
-      links.forEach((link) => {
-        link.removeEventListener("click", clickHandler as EventListener);
-      });
-    };
-  }, []);
 
   return (
-    <nav className=" bg-gray-500/10 w-full fixed   flexBetween  padding-container z-30 py-5 ">
-      <a href="/">
-        <div className="flex items-center justify-center">
-          <Image src="/logo.png" alt="logo" width={60} height={60} />
-          <p className="font-bold text-black text-3xl p-2">
-            Agri<span className="text-green-500">Biotech</span>
-          </p>
-        </div>
-      </a>
-
-      <ul className="hidden h-full gap-12 lg:flex">
-        {NAV_LINKS.map((link) => (
-          <Link
-            href={link.href}
-            key={link.key}
-            className="regular-16 text-white flexCenter cursor-pointer pb-1.5 transition-all hover:font-bold hover:underline"
-          >
-            {link.label}
+    // Navbar container with background color and fixed positioning
+    <nav className="md:bg-gray-900/10 bg-[#68514f] text-white w-full fixed top-0 left-0 z-50">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        {/* Logo and brand name */}
+        <div>
+          <Link href="/" className="flex items-center text-xl font-bold">
+            <Image src="/logo.png" alt="logo" width={40} height={40} />
+            <span className="ml-2">
+              Agri<span className="text-green-500">Biotech</span>
+            </span>
           </Link>
-        ))}
-      </ul>
-      <Image
-        src="menu.svg"
-        alt="menu"
-        width={32}
-        height={32}
-        className="inline-block cursor-pointer lg:hidden"
-      />
+        </div>
+
+        {/* Hamburger icon for mobile menu */}
+        <div className="lg:hidden">
+          <button
+            onClick={toggleMobileMenu}
+            className="focus:outline-none"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          >
+            <Image
+              src={isMobileMenuOpen ? "/close.svg" : "/menu.svg"}
+              alt="menu"
+              width={32}
+              height={32}
+            />
+          </button>
+        </div>
+
+        {/* Desktop navigation */}
+        <ul className="hidden lg:flex gap-8">
+          {/* Map through NAV_LINKS to create navigation links */}
+          {NAV_LINKS.map((link) => (
+            <li key={link.key}>
+              <Link
+                href={link.href}
+                className="text-lg font-semibold hover:text-green-500 transition duration-300"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div className="container mx-auto px-4 py-2">
+          <ul className="flex flex-col gap-4">
+            {/* Map through NAV_LINKS to create navigation links */}
+            {NAV_LINKS.map((link) => (
+              <li key={link.key}>
+                <Link
+                  href={link.href}
+                  className="text-lg font-semibold hover:text-green-500 transition duration-300"
+                  onClick={handleButtonClick}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };

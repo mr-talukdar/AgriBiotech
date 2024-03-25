@@ -1,5 +1,6 @@
 "use client";
 import ContactForm from "@/components/ContactUs";
+import Navbar from "@/components/Navbar";
 import HeroProducts from "@/components/products/HeroProducts";
 import ProductsListing from "@/components/products/ProductsListing";
 import { UrqlProvider } from "@/components/urqlClient";
