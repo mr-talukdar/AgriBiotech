@@ -51,8 +51,10 @@ const ContactForm = () => {
               </div>
               <div className="flex gap-4">
                 <IoPhonePortraitOutline />
-                <div className="md:text-xl text-sm">
-                  +918411028760 +919434401977
+                <div className="md:text-xl text-sm flex flex-col">
+                  <div>+918411028760</div>
+                  <div>+919434401977</div>
+                  <div>+919832979513</div>
                 </div>
               </div>
               <div className="flex gap-4">

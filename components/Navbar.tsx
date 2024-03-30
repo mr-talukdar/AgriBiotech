@@ -29,8 +29,8 @@ const Navbar = () => {
         <div>
           <Link href="/" className="flex items-center text-xl font-bold">
             <Image src="/logo.png" alt="logo" width={40} height={40} />
-            <span className="ml-2">
-              Agri<span className="text-green-500">Biotech</span>
+            <span className="ml-2 text-black font-bold text-xl lg:text-2xl">
+              Agri Biotech
             </span>
           </Link>
         </div>
@@ -58,7 +58,7 @@ const Navbar = () => {
             <li key={link.key}>
               <Link
                 href={link.href}
-                className="text-lg font-semibold hover:text-green-500 transition duration-300"
+                className="text-lg text-black font-semibold hover:text-white transition duration-300"
               >
                 {link.label}
               </Link>

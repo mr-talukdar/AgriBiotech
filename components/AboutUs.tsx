@@ -39,9 +39,7 @@ const AboutUs = () => {
         }
       >
         <p className="  text-bold"> OUR STORY </p>
-        <h1 className="text-2xl text-bold">
-          About Agri <span className="text-green-50">Biotech</span>
-        </h1>
+        <h1 className="text-2xl text-bold">About Agri Biotech</h1>
       </div>
 
       <img src="/AboutUS-FG.png" className=" scale-50" />
@@ -54,9 +52,7 @@ const AboutUs = () => {
         }
       >
         <p className=" text-2xl text-bold"> OUR STORY </p>
-        <h1 className="text-4xl text-bold">
-          About Agri<span className="text-green-50">Biotech</span>
-        </h1>
+        <h1 className="text-4xl text-bold">About Agri Biotech</h1>
         <div className=" w-4/5 text-left text-md ">
           <AboutPG />
         </div>

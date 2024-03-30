@@ -35,7 +35,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{product.name}</div>
         <p className="text-gray-700 text-base">{product.description}</p>
-        <p className="text-gray-700 text-base">Price: 20$</p>
       </div>
       <div className="px-6 py-4">
         <button

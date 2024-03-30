@@ -57,7 +57,12 @@ const CampSite = ({
               />
             ))}
           </span>
-          <p className="bold-16 md:bold-20 text-black">{peopleJoined}</p>
+          <p
+            className="bold-16 md:bold-20 text-white"
+            style={{ textShadow: "2px 2px black" }}
+          >
+            {peopleJoined}
+          </p>
         </div>
       </div>
     </div>

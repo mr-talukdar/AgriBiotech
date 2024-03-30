@@ -9,10 +9,12 @@ const Hero = () => {
       <div className="relative md:mt-20 z-20 flex flex-1 flex-col xl:w-1/2">
         <h1 className="bold-52 text-white lg:bold-88">
           Welcome to <br />
-          Agri
-          <span className=" text-green-50">Biotech</span>
+          <span className=" text-black"> Agri Biotech</span>
         </h1>
-        <p className="  text-xl  md:mt-20 mt-8 text-black font-medium xl:max-w-[520px]">
+        <p
+          className="  text-xl  md:mt-20 mt-8 text-white  font-bold xl:max-w-[520px]"
+          style={{ textShadow: "1px 1px black" }}
+        >
           Agri Biotech-India is focusing to promote an ecologically sustainable
           agriculture with the help of modern biotechnology. Our vision is to
           provide growth and development of rural economy by using research and
