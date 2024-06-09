@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
 import { IoIosClock, IoMdClock } from "react-icons/io";
 import {
   IoBusinessOutline,
@@ -11,28 +13,58 @@ import {
 import { SocialIcon } from "react-social-icons";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
+  const formRef = useRef();
+  const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const [loading, setLoading] = useState(false);
 
-  const handleChangeMessage = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = (e: { target: any }) => {
+    const { target } = e;
+    const { name, value } = target;
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    // Add your logic to handle form submission (e.g., send data to a server, etc.)
-    console.log("Form submitted:", formData);
-    // Clear the form after submission
-    setFormData({ name: "", email: "", message: "" });
-  };
+    setLoading(true);
 
+    emailjs
+      .send(
+        "Agribiotech_mail",
+        "template_2ozg8te",
+        {
+          from_name: form.name,
+          to_name: "Rahul",
+          from_email: form.email,
+          to_email: "connect@rahultalukdar.in",
+          message: form.message,
+        },
+        "qmeqgh5sh0sD3xQpl"
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert("Thank you. I will get back to you as soon as possible.");
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error);
+          alert("Something went wrong.");
+        }
+      );
+  };
   return (
     <>
       <div
@@ -106,7 +138,7 @@ const ContactForm = () => {
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
+                  value={form.name}
                   onChange={handleChange}
                   required
                   className="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -123,7 +155,7 @@ const ContactForm = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
+                  value={form.email}
                   onChange={handleChange}
                   required
                   className="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -139,8 +171,8 @@ const ContactForm = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChangeMessage}
+                  value={form.message}
+                  onChange={handleChange}
                   required
                   className="w-full border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 />
